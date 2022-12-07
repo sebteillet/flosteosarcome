@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="img/Favicon.png" type="image/x-icon">
+		<title>Season</title>
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/timer.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/custom.css">
+	</head>
+
+
+	<body onload="countdown('2023','03','01','08','00')">
+
+		<!-- Carousel -->
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		    <!-- Indicators -->
+		    <ol class="carousel-indicators">
+		        <li data-target="#myCarousel" data-slide-to="0" class="active">1</li>
+		        <li data-target="#myCarousel" data-slide-to="1">2</li>
+		        <li data-target="#myCarousel" data-slide-to="2">3</li>
+		    </ol>
+		    <div class="carousel-inner">
+		    	<div class= "container timer">
+		    		<header id="home" class="logo">
+						<div id="logo">
+							<img src="img/logo-only.png" style="height: 100%;" alt="Logo association Flostéosarcome">
+							<span style="font-family: 'logo'; color: #E3413F; font-size: 35px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">flosteosarcome</span>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#">Accueil</a></li>
+								<li><a href="#">L'association</a></li>
+								<li><a href="#">Les détails du projet</a></li>
+								<li><a href="#">Contact</a></li>
+								<li><a href="#"><span>Faire un don</span></a></li>
+							</ul>
+						</nav>
+		    		</header>
+			    	<div class= "row timer-circle">
+			    		<div class= "main-text text-center">
+							<h2 class="top-text">Marche caritative en faveur de</h2>
+							<div>
+								<a href="#"><img height="120px" src="img/assos/ligue.png" /></a>
+								<a href="#"><img height="90px" src="img/assos/esean.png" /></a>
+							</div>
+							<div class="desc">
+								<h3>Ce projet est un projet sportif caritatif dans une optique de récolter des dons, l'objectif est de réaliser le tour des 3 îles autour de la
+								Rochelle, qui sont l'île d'Oléron, l'île d'Aix et l'île de Ré, soit environ 300 kilomètres, dans un délai de 14 jours maximum</h3>
+							</div>
+							<!-- <h2 class="sub-text">Mars 2023</h2> -->
+			    		</div>
+			    		<div class="text-center">
+							<div class="numbers" id="count2"></div>
+						</div>
+						<div class= "col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+							<div class= "circle text-center">
+								<div class= "row" id= "spacer1">
+									<div class= "title"></div>
+									<div class= "numbers" id= "dday"></div>
+								</div>
+								<div class= "row" id= "spacer2">
+									<div class= "title"></div>
+									<div class= "title" id= "days">jours</div>
+								</div>
+							</div>
+							<div class= "circle text-center">
+								<div class= "row" id= "spacer1">
+									<div class= "title"></div>
+									<div class= "numbers" id= "dhour"></div>
+								</div>
+								<div class= "row" id= "spacer2">
+									<div class= "title"></div>
+									<div class= "title" id= "hours">heures</div>
+								</div>
+							</div>
+							<div class= "circle text-center">
+								<div class= "row" id= "spacer1">
+									<div class= "title"></div>
+									<div class= "numbers" id= "dmin"></div>
+								</div>
+								<div class= "row" id= "spacer2">
+									<div class= "title"></div>
+									<div class= "title" id= "minutes">min</div>
+								</div>
+							</div>
+							<div class= "circle text-center">
+								<div class= "row" id= "spacer1">
+									<div class= "title"></div>
+									<div class= "numbers" id= "dsec"></div>
+								</div>
+								<div class= "row" id= "spacer2">
+									<div class= "title"></div>
+									<div class= "title" id= "seconds">sec</div>
+								</div>
+							</div>
+						</div><!-- end of clock -->
+			    	</div><!-- end of timer-circle -->
+		    	</div><!-- end of timer -->
+			    	
+		        <div class="item active" style="background-image: url('img/img1.jpg');"></div>
+		        <div class="item" style="background-image: url('img/img2.jpg');"></div>
+		        <div class="item" style="background-image: url('img/img3.jpg');"></div>
+			</div>
+			<div id="partners">
+				<img class="big" src="img/partners/decathlon.png" />
+				<img class="small" src="img/partners/ca.png" />
+				<img class="small" src="img/partners/gopro.png" />
+				<img class="small" src="img/partners/heuremarche.jpeg" />
+				<img class="medium" src="img/partners/lycee.png" />
+				<img class="medium" src="img/partners/rotary.png" />
+				<img class="medium" src="img/partners/stade.png" />
+			</div>
+		</div><!-- end of carousel -->
+
+		<div class= "body-content">
+			<!-- subscribe -->
+			<div class= "container subscribe">
+				<div class="row text-center">
+					<div class= "col-lg-6 col-lg-offset-3 subscribe-text">
+						<h3 class= "text-center">Subscribe us</h3>
+						<hr class= "full">
+	                	<p>Welcome to our world of technology</p>
+	                	<br/>
+					</div>
+				</div>
+			</div><!-- end of subscribe -->
+			<div class= "container after-slide">
+				<div class= "row">
+					<div class="col-md-6 col-md-offset-3 col-lg-8 col-lg-offset-2 col-sm-12 col-xs-12 text-center">
+						<p class= "after-slide-text">Our website is under construction. We`ll be here soon with our new site.</p>
+					</div>
+				</div>
+				<div class="subscribe-form" >
+					<div class= "row">
+						<div class="input-group margin-bottom-sm col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 text-center">
+						  	<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+						  	<input class="form-control" type="text" placeholder="Email address">
+						</div>
+						<div class="input-group col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 text-center form">
+						  	<span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+						  	<input class="form-control" type="password" placeholder="Password">
+						</div>
+						<div class="input-group margin-bottom-sm col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+							<button type="button" class="btn btn-info">Subscribe</button>
+						</div>
+					</div>
+				</div>
+			</div><!-- end of after slide part -->
+
+	        <!-- share part -->
+	      	<div class="container share">
+				<div class="row text-center">
+					<div class= "col-lg-6 col-lg-offset-3 share-text">
+						<h3 class= "text-center">Stay Connected</h3>
+						<hr class= "full">
+	                	<p>We want to connect people like you.</p>
+	                	<br/>
+					</div>
+				</div>
+			</div>
+			<div class= "container share-icons text-center">
+				<div class= "row text-center">
+					<div class= "col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<ul class="socials-icons col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<li>
+								<a href="#" data-toggle="tooltip" title="Share in Facebook" class="facebook"><i class="fa fa-facebook"></i></a>
+							</li>
+							<li>
+								<a href="#" data-toggle="tooltip" title="Share in Twitter" class="twitter"><i class="fa fa-twitter"></i></a>
+							</li>
+							<li>
+								<a href="#" data-toggle="tooltip" title="Share in Google +" class="google-plus"><i class="fa fa-google-plus"></i></a>
+							</li>
+							<li>
+								<a href="#" data-toggle="tooltip" title="Share in Instagram" class="instagram"><i class="fa fa-instagram"></i></a>
+							</li>
+							<li>
+								<a href="#" data-toggle="tooltip" title="Share in Pinterest" class="pinterest"><i class="fa fa-pinterest"></i></a>
+							</li>
+							<li>
+								<a href="#" data-toggle="tooltip" title="Connect with Skype" class="skype"><i class="fa fa-skype"></i></a>
+							</li>
+						</ul> 
+					</div>
+				</div>
+			</div><!-- end of share part -->
+	    </div><!-- end of body content -->
+		<!-- footer -->
+		<div class="wrapper footer">
+			<div class="container">
+				<div class="row text-center">
+					<div class="name col-lg-2 col-md-2 col-sm-2 col-xs-12 text-center">
+						<h1>Season</h1>
+					</div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text-center">
+						<div class="copyright">
+							&copy; Copyright 2014 Theme Wagon.
+						</div>
+					</div>
+					<div class= "col-lg-2 col-md-2 col-sm-2 col-xs-12" id="back-top">
+						<p class= "pull-right"><a href="#home"><span></span>Top</a></p>	
+					</div>	
+				</div><!-- row -->
+			</div>
+		</div><!--end of footer -->
+	</body>
+</html>
+Image par <a href="https://pixabay.com/fr/users/matthias_groeneveld-4535957/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3284504">Matthias Groeneveld</a> de <a href="https://pixabay.com/fr//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3284504">Pixabay</a>
+Image par <a href="https://pixabay.com/fr/users/fotorech-5554393/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2635038">Daniel Reche</a> de <a href="https://pixabay.com/fr//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2635038">Pixabay</a>
+Image par <a href="https://pixabay.com/fr/users/pcdazero-2615/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2540188">Gianni Crestani</a> de <a href="https://pixabay.com/fr//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2540188">Pixabay</a>
