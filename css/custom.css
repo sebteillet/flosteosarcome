@@ -39,7 +39,7 @@ img
 }
 
 h2.top-text {
-    font-family: "Lato";
+    font-family: "Lato", Helvetica, sans-serif;
     font-weight: 600;
     color: white;
     font-size: 40px;
@@ -52,7 +52,7 @@ h2.sub-text {
     background: rgb(39, 64, 55);
     color: white;
     font-size: 30px;
-    font-family: "Lato";
+    font-family: "Lato", Helvetica, sans-serif;
     padding: 8px 12px 12px 12px;
     width: 226px;
     text-align: center;
@@ -536,7 +536,7 @@ nav ul li:last-child {
 }
 ul a {
     color: white;
-    font-family: "Lato";
+    font-family: "Lato", Helvetica, sans-serif;
     font-weight: 600;
 }
 ul a:hover, ul a:focus  {
