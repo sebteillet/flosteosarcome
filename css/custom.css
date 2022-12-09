@@ -80,9 +80,17 @@ header
     height: 80px;
     flex-grow: 1;
     display: flex;
-    align-items: center;
+    align-items: center; 
 }
-
+#logo img {
+    height: 100%;
+}
+#logo span {
+    font-family: 'logo';
+    color: #E3413F;
+    font-size: 35px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 .timer
 {
     position:absolute;
@@ -201,7 +209,7 @@ subscribe
     padding: 20px;
 }
 /*----------------------------------------------------------------------------------------------------
-Our service
+Asso
 -----------------------------------------------------------------------------------------------------*/
 .services
 {
@@ -209,20 +217,24 @@ Our service
     padding: 50px 0px;
     background-size: cover;
 }
-.service, .share, .subscribe {
-    background-color: rgba(79, 151, 138, 1);
+.service, .association {
+    background-color: #EEEEEE;
 }
-.service-text h3, .share-text h3, .subscribe-text h3 {
+.project {
+    background-color: #FEFEFE;
+}
+.service-text h3, .share-text h3, .association-text h3 {
     padding: 30px 0 0 20px;
     font-size: 45px;
     font-family: 'Coda', cursive;
     text-shadow: 1px 1px 1px #ABAFAE;
-    color: rgb(255, 252, 252);
+    color: #424242;
 }
-.service-text p , .share-text p, .subscribe-text p
+.service-text p , .share-text p, .association-text p
 {
-    font-size: 25px;
-    color: white;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #424242;
     font-family: 'Merriweather', serif;
 }
 .about-service 
@@ -251,7 +263,7 @@ Our service
     color: lightseagreen;
 }
 hr {
-border-color: rgb(255, 255, 251);
+    border-color: #212121;
 }
 .full
 {
@@ -266,8 +278,8 @@ border-color: rgb(255, 255, 251);
 share
  ---------------------------------------------------------------------------------------------------*/
 .share-icons {
-    padding: 50px;
-    background: rgba(79, 151, 138, 0.93);
+    padding: 10px 0 20px 0;
+    background: #2C8FCD;
 }
 .socials-icons {
     margin: 0 auto;
@@ -312,7 +324,7 @@ share
 }
 .facebook
 {
-    background-color: #3acab1;
+    background-color: #263238;
 }
 .facebook:hover
 {
@@ -320,52 +332,35 @@ share
 }
 .twitter
 {
-    background-color: #3acab1;
+    background-color: #263238;
 }
 .twitter:hover
 {
     background-color: #0EAACE;
 }
-.google-plus
-{
-    background-color: #3acab1;
-}
-.google-plus:hover
-{
-    background-color: #DD4C39;
-}
 .instagram
 {
-    background-color: #3acab1;
+    background-color: #263238;
 }
 .instagram:hover
 {
-    background-color: #4A789E;
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
 }
-.pinterest
+.whatsapp
 {
-    background-color: #3acab1;
+    background-color: #263238;
 }
-.pinterest:hover
+.whatsapp:hover
 {
-    background-color: #CB2027;
-}
-.skype
-{
-    background-color: #3acab1;
-}
-.skype:hover
-{
-    background-color: #01AEF2;
+    background-color: #25D366;
 }
 /*----------------------------------------------------------------------------------------------------
 FOOTER
 -----------------------------------------------------------------------------------------------------*/
 .footer {
-    background: rgba(54, 75, 63, 0.97);
-    color: rgba(255,255,255,0.8);
-    padding-top: 30px;
-    padding-bottom: 30px;
+    background: #424242;
+    color: rgba(255,255,255,0.9);
+    padding-top: 15px;
 }
 .name
 {
@@ -405,7 +400,7 @@ back to top
     height:45px;
     display:block;
     margin-bottom:7px;
-    background:rgba(0,0,0,0.2) url(../img/arrow-top.png) no-repeat center center;
+    background:rgba(255,255,255,0.2) url(../img/arrow-top.png) no-repeat center center;
     -webkit-border-radius:100%;
     -moz-border-radius:100%;
     border-radius:100%;
@@ -418,10 +413,6 @@ back to top
 #back-top a:hover span 
 {
     background-color: #777;
-}
-#back-top 
-{
-    padding-top: 16px;
 }
 /*-------------------------------------------------------------------------------------------------
 media query for responsive
@@ -569,4 +560,33 @@ h3 {
     color: white;
     font-size: 20px;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.main-associations .small {
+    height: 90px;
+}
+
+.main-associations .medium {
+    height: 120px;
+}
+.button-more {
+    background-color: #E3413F;
+    display: block;
+    margin: 25px auto;
+    padding: 3px 25px;
+    font-size: 15px;
+    border-radius: 30px;
+    color: white;
+    border: 2px solid #E3413F;
+}
+
+.button-more:hover, .button-more:focus {
+    color: #E3413F;
+    background-color: white;
+    text-decoration: none;
+}
+.section-title {
+    margin: 25px auto;
+}
+.section-end {
+    display: flex;
 }
