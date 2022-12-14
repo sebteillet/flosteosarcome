@@ -491,7 +491,7 @@ media query for responsive
     right: 0;
     height: 110px;
     margin: auto;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.3);
     justify-content: space-around;
     align-items: center;
     filter: drop-shadow(6px 6px 4px black);
