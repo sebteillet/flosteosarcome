@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=Alegreya&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Marck+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&display=swap');
 /*----------------------------------------------------------------------------------------------
  global
 -----------------------------------------------------------------------------------------------*/
@@ -39,11 +40,10 @@ img
 }
 
 h2.top-text {
-    font-family: "Lato", Helvetica, sans-serif;
-    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
     color: white;
     font-size: 40px;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 h2.sub-text {
     position: relative;
@@ -104,7 +104,7 @@ header
 }
 .timer-circle
 {
-    padding-top: 50px;
+    padding-top: 25px;
 }
 .timer-circle h1 {
     font-size: 50px;
@@ -130,8 +130,7 @@ header
     border-radius: 100%;
     border: 5px white dotted;
     color: white;
-    background-color: #2C8FCD;
-    opacity: 70%;
+    background-color: rgba(44, 143, 205, 0.70);
 }
 #spacer1 
 {
@@ -220,10 +219,10 @@ Asso
     background-size: cover;
 }
 .service, .association {
-    background-color: #EEEEEE;
+    background-color: #CCCCCC;
 }
 .project {
-    background-color: #FEFEFE;
+    background-color: #EDEDED;
 }
 .service-text h3, .share-text h3, .association-text h3 {
     padding: 30px 0 0 20px;
@@ -556,8 +555,13 @@ ul a span:hover, ul a span:focus {
 }
 .desc {
     margin: auto;
-    max-width: 800px;
+    max-width: 850px;
     text-align: center;
+}
+.desc h3 {
+    line-height: 1.4;
+    font-size: 22px;
+    font-weight: 700;
 }
 h3 {
     color: white;
@@ -589,6 +593,7 @@ h3 {
 }
 .section-title {
     margin: 25px auto;
+    text-transform: uppercase;
 }
 .section-end {
     display: flex;
@@ -611,4 +616,119 @@ h3 {
 }
 footer a, footer a:hover {
     color: white;
+}
+header nav a:not(.cta) {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(1.2, 1.2);
+    }
+}
+@keyframes zoom-out {
+    0% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+#bg1 {
+    animation: zoom-in 6s ease-out 1;
+}
+#bg2 {
+    animation: zoom-out 6s ease-out 1;
+}
+#bg3 {
+    animation: zoom-in 6s ease-out 1;
+}
+
+
+
+label {
+    color: #333;
+}
+
+.btn-send {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 80%;
+    margin-left: 3px;
+    background-color: #E3413F;
+    color: white;
+}
+.help-block.with-errors {
+    color: #ff5050;
+    margin-top: 5px;
+
+}
+
+.card{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.contact-wrapper {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-wrapper {
+    border-radius: 50%;
+    background-color: #2C8FCD;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.association-img {
+    border-radius: 15px;
+}
+
+.association-detail h4 {
+    font-size: 24px;
+}
+
+.association-quote {
+    justify-content: center;
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.project-quote {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sponsor-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: square;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.sponsor-list a {
+    color: #428bca;
+    text-decoration: none;
 }

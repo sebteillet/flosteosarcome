@@ -4,11 +4,12 @@
 		<meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-		<title>Association Flosteosarcome - course caritative Mars 2023 - mentions légales</title>
+		<title>Association Flosteosarcome - course caritative Mars 2023 - contact</title>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/timer.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
+		<script src="https://kit.fontawesome.com/a0c3985323.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 		<link href='https://fonts.googleapis.com/css?family=Lobster&display=swap' rel='stylesheet' type='text/css'>
@@ -36,13 +37,20 @@
 			<div class= "container association">
 				<div class="row text-center">
 					<div class= "col-lg-8 col-lg-offset-2 association-text">
-						<h3 class= "text-center">Mentions légales</h3>
+						<h3 class= "text-center">Contacter l'association Flostéosarcome</h3>
 						<hr class= "full">
+						<strong>Président de l'association:</strong> Florent TEILLET
 	                	<p class="text-left">
-							<strong>Nom du site web:</strong> Association Flostéosarcome<br />
-							<strong>Adresse du site:</strong> flosteosarcome.com<br />
-							<strong>Responsable de publication:</strong> Florent TEILLET - <a href="mailto: flosteosarcome@gmail.com">flosteosarcome@gmail.com</a><br />
-							<strong>Hébergement:</strong> GitHub, Inc. - 88 Colin P. Kelly Jr. Street San Francisco, CA 94107 USA - +1 (877) 448-4820
+							<div class="contact-info">
+								<div class="icon-wrapper">
+									<i class="fa-solid fa-phone fa-xl"></i>
+								</div>
+								<span><a href="mailto: flosteosarcome@gmail.com">flosteosarcome@gmail.com</a></span>
+								<div class="icon-wrapper">
+									<i class="fa-solid fa-envelope fa-xl"></i>
+								</div>
+								<span><a href="tel:+33600000000">+33 (0)600000000</a></span>
+							</div>
 						</p>
 					</div>
 				</div>
@@ -50,35 +58,62 @@
 
 	        <!-- share part -->
 	      	<div class="container project">
-				<div class="row text-center">
-					<div class= "col-lg-8 col-lg-offset-2 share-text">
-						<hr>
-						<p class="text-left">
-							<strong>Conditions d’utilisation</strong><br />
-							L’utilisation du présent site implique l’acceptation pleine et entière des conditions générales d’utilisation décrites ci-après. Ces conditions d’utilisation sont susceptibles d’être modifiées ou complétées à tout moment.<br /><br />
-							<strong>Informations</strong><br />
-							Les informations et documents du site sont présentés à titre indicatif, sans de caractère exhaustif, et ne peuvent engager la responsabilité du propriétaire du site.<br />
-							Le propriétaire du site ne peut être tenu responsable des dommages directs et indirects consécutifs à l’accès au site.<br /><br />
-							<strong>Propriété intellectuelle</strong><br />
-							Sauf mention contraire, tous les éléments accessibles sur le site (textes, images, graphismes, logo, icônes, sons, logiciels, etc.) restent la propriété exclusive de leurs auteurs, en ce qui concerne les droits de propriété intellectuelle ou les droits d’usage.<br />
-							Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de l’auteur.<br />
-							Toute exploitation non autorisée du site ou de l’un quelconque des éléments qu’il contient est considérée comme constitutive d’une contrefaçon et passible de poursuites.<br />
-							Les marques et logos reproduits sur le site sont déposés par les sociétés qui en sont propriétaires.<br /><br />
-							<strong>Liens</strong><br />
-							Liens sortants
-Le propriétaire du site décline toute responsabilité et n’est pas engagé par le référencement via des liens hypertextes, de ressources tierces présentes sur le réseau Internet, tant en ce qui concerne leur contenu que leur pertinence.
-
-Liens entrants
-Le propriétaire du site autorise les liens hypertextes vers l’une des pages de ce site, à condition que ceux-ci ouvrent une nouvelle fenêtre et soient présentés de manière non équivoque afin d’éviter :
-
-tout risque de confusion entre le site citant et le propriétaire du site
-ainsi que toute présentation tendancieuse, ou contraire aux lois en vigueur.
-Le propriétaire du site se réserve le droit de demander la suppression d’un lien s’il estime que le site source ne respecte pas les règles ainsi définies.
-						</p>
-						
-					</div>
+				<div class="row contact-wrapper">
+					<div class="col-lg-8 col-lg-offset-2 mx-auto">
+					  <div class="card mt-2 mx-auto p-4 bg-light">
+						  	<div class="card-body bg-light">
+								<div class = "container">
+									<form id="contact-form" role="form">
+										<div class="controls">
+											<p>Vous pouvez également nous contacter pour toute demande avec le formulaire de contact suivant:</p>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="form_name">Prénom *</label>
+														<input id="form_name" type="text" name="name" class="form-control" placeholder="Votre prénom *" required="required" data-error="Firstname is required.">
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="form_lastname">Nom *</label>
+														<input id="form_lastname" type="text" name="lastname" class="form-control" placeholder="Votre nom *" required="required" data-error="Lastname is required.">
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="form_email">Email *</label>
+														<input id="form_email" type="email" name="email" class="form-control" placeholder="Votre email" required="required" data-error="Valid email is required.">
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="form_subject">Sujet *</label>
+														<input id="form_subject" type="text" name="subject" class="form-control" placeholder="Sujet" required="required" data-error="Valid email is required.">
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="form-group">
+														<label for="form_message">Message *</label>
+														<textarea id="form_message" name="message" class="form-control" placeholder="Votre message" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+													</div>
+												</div>
+												<div class="col-md-12">
+													<input type="submit" class="btn btn-send pt-2 btn-block" value="Envoyer" >
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+						  	</div>
+				  		</div>
+					  <!-- /.8 -->
+				  </div>
 				</div>
-			</div>
+	      	</div>
 			<div class= "container share-icons text-center">
 				<div class= "text-center">
 					<div class= "col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -100,7 +135,7 @@ Le propriétaire du site se réserve le droit de demander la suppression d’un 
 					</div>
 				</div>
 			</div><!-- end of share part -->
-	    </div><!-- end of body content -->
+		</div><!-- end of body content -->
 		<!-- footer -->
 		<footer class="wrapper footer">
 			<div class="container">
