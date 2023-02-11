@@ -517,6 +517,9 @@ media query for responsive
     #partners img.big {
         height: 64px;
     }
+    .img-sarcome {
+        display: none;
+    }
 }
 @media screen and (max-width: 992px) {
     #partners {
@@ -561,13 +564,17 @@ media query for responsive
     .carousel {
         height: auto;
     }
-    #home {
+    #home, #header {
         display: flex;
         flex-wrap: wrap;
         height: auto;
     }
     #logo {
         justify-content: center;
+    }
+    #header::before {
+        height: 100% !important;
+        background-position: -50px -300px !important;
     }
 }
 @media screen and (max-width: 576px) {
@@ -622,6 +629,7 @@ media query for responsive
     nav ul {
         flex-wrap: wrap;
         padding: 0;
+        text-align: center;
     }
     nav ul li {
         flex-basis: 100%;
@@ -770,6 +778,9 @@ header nav a:not(.cta) {
     animation: zoom-in 6s ease-out 1;
 }
 
+.img-sarcome {
+    max-width: 200px;
+}
 
 
 label {
@@ -806,6 +817,7 @@ label {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .icon-wrapper {
