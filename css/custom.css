@@ -419,7 +419,7 @@ back to top
 /*-------------------------------------------------------------------------------------------------
 media query for responsive
 ---------------------------------------------------------------------------------------------------*/
-@media (max-width: 758px) and (min-width: 580px)
+@media (max-width: 992px) and (min-width: 400px)
 {
     .circle
     {
@@ -433,6 +433,7 @@ media query for responsive
     }
     #spacer2
     {
+        margin-top: -15px;
         font-size: 30px;
     }
 }
@@ -483,6 +484,7 @@ media query for responsive
 #partners {
     position: absolute;
     display: flex;
+    gap: 10px;
     bottom: 0;
     z-index: 1;
     width: 100%;
@@ -497,13 +499,133 @@ media query for responsive
     border-top: 1px solid wheat;
 }
 #partners img.small {
-    height: 55px;
+    height: 35px;
 }
 #partners img.medium {
     height: 70px;
 }
 #partners img.big {
     height: 85px;
+}
+@media screen and (max-width: 1200px) {
+    #partners img.small {
+        height: 26px;
+    }
+    #partners img.medium {
+        height: 52px;
+    }
+    #partners img.big {
+        height: 64px;
+    }
+}
+@media screen and (max-width: 992px) {
+    #partners {
+        flex-wrap: wrap;
+        height: auto;
+        background-color: #555;
+        position: relative;
+        padding: 15px;
+        text-align: center;
+        filter: none;
+    }
+    #partners img.small {
+        height: 21px;
+    }
+    #partners img.medium {
+        height: 42px;
+    }
+    #partners img.big {
+        height: 51px;
+    }
+    .carousel-inner {
+        position: relative;
+    }
+    .carousel-inner .container {
+        position: relative;
+        background-image: url('../img/img3.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .timer-circle .container-circles {
+        margin-bottom: 15px;
+    }
+    h2.top-text, .desc h3 {
+        padding: 15px;
+    }
+    #bg1, #bg2, #bg3 {
+        display: none;
+    }
+    .carousel-indicators {
+        display: none;
+    }
+    .carousel {
+        height: auto;
+    }
+    #home {
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+    }
+    #logo {
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 576px) {
+    #partners {
+        flex-wrap: wrap;
+        height: auto;
+        background-color: #555;
+        position: relative;
+        padding: 15px;
+        text-align: center;
+        filter: none;
+    }
+    #partners a {
+        flex-basis: 45%;
+    }
+    #partners img.small {
+        height: 35px;
+    }
+    #partners img.medium {
+        height: 70px;
+    }
+    #partners img.big {
+        height: 85px;
+    }
+    .carousel-inner {
+        position: relative;
+    }
+    .carousel-inner .container {
+        position: relative;
+        background-image: url('../img/img3.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .timer-circle .container-circles {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    h2.top-text, .desc h3 {
+        padding: 15px;
+    }
+    #bg1, #bg2, #bg3 {
+        display: none;
+    }
+    .carousel-indicators {
+        display: none;
+    }
+    .carousel {
+        height: auto;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    nav ul li {
+        flex-basis: 100%;
+    }
 }
 @font-face {
     font-family: "logo";
