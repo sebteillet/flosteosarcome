@@ -63,7 +63,7 @@
 					  <div class="card mt-2 mx-auto p-4 bg-light">
 						  	<div class="card-body bg-light">
 								<div class = "container">
-									<form id="contact-form" role="form" action="https://formsubmit.co/flosteosarcome@gmail.com" method="POST">
+									<form id="contact-form" role="form" action="https://formsubmit.co/da826a0b537860f396d4c759fb64807e" method="POST">
 										<div class="controls">
 											<p>Vous pouvez également nous contacter pour toute demande avec le formulaire de contact suivant:</p>
 											<div class="row">
@@ -102,7 +102,9 @@
 													</div>
 												</div>
 												<div class="col-md-12">
-													<input type="submit" class="btn btn-send pt-2 btn-block" value="Envoyer" >
+													<input type="hidden" name="_captcha" value="true" />
+													<input type="text" name="_honey" style="display:none" />
+													<input type="submit" class="btn btn-send pt-2 btn-block" value="Envoyer" />
 												</div>
 											</div>
 										</div>
@@ -154,5 +156,19 @@
 				</div><!-- row -->
 			</div>
 		</footer><!--end of footer -->
+		<script>
+			$('#contact-form').submit(function(event) {
+				event.preventDefault();
+				$.post('https://formsubmit.co/ajax/da826a0b537860f396d4c759fb64807e',
+					{
+						name: $('#form_name').val() + ' ' + $('#form_lastname').val(),
+						email: $('#form_email').val(),
+						subject: $('#form_subject').val(),
+						message: $('#form_message').val()
+					}, function(response) { 
+						console.log('RES:', response);
+				});
+			});
+		</script>
 	</body>
 </html>
