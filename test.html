@@ -1,81 +1,111 @@
 <script type="text/javascript" src="js/jquery.js"></script>
+<script src='https://www.gstatic.com/firebasejs/4.8.1/firebase.js'></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 <script>
-    let coords = [
-        { lat: 45.864829, lng: -1.199774},
-        { lat: 45.865200, lng: -1.199903},
-        { lat: 45.865376, lng: -1.199949},
-        { lat: 45.865523, lng: -1.199979},
-        { lat: 45.865677, lng: -1.200036},
-        { lat: 45.866108, lng: -1.200193},
-        { lat: 45.866360, lng: -1.200247},
-        { lat: 45.867089, lng: -1.200252},
-        { lat: 45.867533, lng: -1.200232},
-        { lat: 45.867725, lng: -1.200039},
-    ];
+    // GLOBALS
     let map = null;
+    const coords = [];
+    const defaultCoord = [46.050007, -1.246484];
+    const defaultZoom = 10;
+    let dbRef = null;
+
+    // OPTIONS FOR GEOLOC
     const options = {
         enableHighAccuracy: true,
         timeout: 5000,
         maximumAge: 0
     };
 
-    function success(pos) {
-        const crd = pos.coords;
-
-        console.log('Your current position is:');
-        $('#latitude').text(crd.latitude);
-        console.log(`Latitude : ${crd.latitude}`);
-        $('#longitude').text(crd.longitude);
-        console.log(`Longitude: ${crd.longitude}`);
-        $('#accuracy').text(crd.accuracy);
-        console.log(`More or less ${crd.accuracy} meters.`);
-        $('#updated').text(new Date());
-        coords.push({
-            lat: crd.latitude,
-            lng: crd.longitude
-        });
-        const polyline = L.polyline(coords, { color: 'red' });
-        if (map) {
-            polyline.addTo(map);
-        }
+    // GEOLOC UTILITY
+    function startGeoloc() {
+        navigator.geolocation.watchPosition(function success(pos) {
+            const crd = pos.coords;
+            console.log('Your current position is:');
+            $('#latitude').text(crd.latitude);
+            console.log(`Latitude : ${crd.latitude}`);
+            $('#longitude').text(crd.longitude);
+            console.log(`Longitude: ${crd.longitude}`);
+            $('#accuracy').text(crd.accuracy);
+            console.log(`More or less ${crd.accuracy} meters.`);
+            $('#updated').text(new Date());
+            pushCoord(new Date().getTime(), crd.latitude, crd.longitude);
+            /* coords.push({
+                date: new Date().getTime(),
+                lat: crd.latitude,
+                lng: crd.longitude
+            });
+            const polyline = L.polyline(coords, { color: 'red' });
+            if (map) {
+                polyline.addTo(map);
+            } */
+        }, function error(err) {
+            console.warn(`ERROR(${err.code}): ${err.message}`);
+        }, options);
     }
 
-    function error(err) {
-        console.warn(`ERROR(${err.code}): ${err.message}`);
-    }
-    setTimeout(function(){
-        navigator.geolocation.watchPosition(success, error, options);
-    }, 1000 * 15);
-    
-    /*$.get('http://api.positionstack.com/v1/forward?access_key=fab24019572a40e1ec310b30385b53e1',
-        {}, function(response) { 
-            console.log('RES:', response);
-    });*/
-    // https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAO2rcu-_qBa07Jq84WyivJfroDhdj3yqY
-
-
+    // INIT MAT
     function initMap() {
-        map = L.map('map').setView([46.050007, -1.246484], 10);
+        map = L.map('map').setView(defaultCoord, defaultZoom);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
-        const polyline = L.polyline(coords, { color: 'red' });
-        polyline.addTo(map);
     }
 
-    setTimeout(initMap, 1000 * 3);
+    // CONFIG FIREBASE
+    var config = {
+        apiKey: "AIzaSyDXPIxRuudFKZymWOXdTVHSC8CFSacHhGU",
+        authDomain: "flosteosarcome2023.firebaseapp.com",
+        databaseURL: "https://flosteosarcome2023-default-rtdb.firebaseio.com",
+        projectId: "flosteosarcome2023",
+        messagingSenderId: "firebase-adminsdk-kzina"
+    };
+
+    // INIT FIREBASE
+    function initFirebase() {
+        firebase.initializeApp(config);
+        dbRef = firebase.database().ref();
+    }
+
+    // PUSH COORD TO FIREBASE
+    function pushCoord(date, lat, lng) {
+        const locRef = dbRef.child('locations');
+        locRef.child(date.toString()).set({
+            date,
+            lat,
+            lng
+        });
+    }
+
+    // DISPLAY ON MAP
+    function displayCoord() {
+        const locRef = dbRef.child('locations');
+        locRef.on("child_added", snap => {
+            let loc = snap.val();
+            coords.push({
+                date: loc.date,
+                lat: loc.lat,
+                lng: loc.lng
+            });
+            const polyline = L.polyline(coords, { color: 'red' });
+            if (map) {
+                polyline.addTo(map);
+            }
+        });
+    }
+
+    // RUNS
+    setTimeout(initMap, 1000 * 3); // Run after 3 sec
+    setTimeout(initFirebase(), 1000 * 5); // Run after 5 sec
+    setTimeout(startGeoloc(), 1000 * 15); // Run after 15 sec
+    setTimeout(displayCoord(), 1000 * 15); // Run after 15 sec
 
 </script>
+
 LAT: <span id="latitude"></span><br />
 LNG: <span id="longitude"></span><br />
 ACC: <span id="accuracy"></span><br />
 <br />
 Last updated: <span id="updated"></span>
 <div style="height: 600px;" id="map"></div>
-
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-
-
