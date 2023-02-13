@@ -9,6 +9,10 @@
     const defaultCoord = [46.050007, -1.246484];
     const defaultZoom = 10;
     let dbRef = null;
+    let lastCoords = {
+        latitude: 0,
+        longitude: 0
+    };
 
     // OPTIONS FOR GEOLOC
     const options = {
@@ -18,6 +22,20 @@
     };
 
     // GEOLOC UTILITY
+    function distanceBetweenCoords(lat1, lon1, lat2, lon2) {
+        const R = 6371e3; // metres
+        const φ1 = lat1 * Math.PI/180; // φ, λ in radians
+        const φ2 = lat2 * Math.PI/180;
+        const Δφ = (lat2-lat1) * Math.PI/180;
+        const Δλ = (lon2-lon1) * Math.PI/180;
+        const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+                Math.cos(φ1) * Math.cos(φ2) *
+                Math.sin(Δλ/2) * Math.sin(Δλ/2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        const d = R * c; // in metres
+        return d;
+    }
+
     function startGeoloc() {
         navigator.geolocation.watchPosition(function success(pos) {
             const crd = pos.coords;
@@ -29,16 +47,16 @@
             $('#accuracy').text(crd.accuracy);
             console.log(`More or less ${crd.accuracy} meters.`);
             $('#updated').text(new Date());
-            pushCoord(new Date().getTime(), crd.latitude, crd.longitude);
-            /* coords.push({
-                date: new Date().getTime(),
-                lat: crd.latitude,
-                lng: crd.longitude
-            });
-            const polyline = L.polyline(coords, { color: 'red' });
-            if (map) {
-                polyline.addTo(map);
-            } */
+            const distance = distanceBetweenCoords(lastCoords.latitude, lastCoords.longitude, crd.latitude, crd.longitude);
+            $('#distance').text(distance);
+            console.log('DIST:', distance);
+            if (!lastCoords /* || distance >= 30*/) {
+                pushCoord(new Date().getTime(), crd.latitude, crd.longitude);
+                lastCoords = {
+                    latitude: crd.latitude,
+                    longitude: crd.longitude
+                }
+            }
         }, function error(err) {
             console.warn(`ERROR(${err.code}): ${err.message}`);
         }, options);
@@ -78,6 +96,14 @@
         });
     }
 
+    let totalTimeInMS = 0;
+    let lastTimeChecked = 0;
+    let distance = 0;
+    let lastCoordsChecked = {
+        lat: 0,
+        lng: 0
+    }
+
     // DISPLAY ON MAP
     function displayCoord() {
         const locRef = dbRef.child('locations');
@@ -88,6 +114,25 @@
                 lat: loc.lat,
                 lng: loc.lng
             });
+            if (lastTimeChecked != 0 && loc.date - lastTimeChecked <= 60 * 2 * 1000) {
+                totalTimeInMS += loc.date - lastTimeChecked;
+            }
+            if (lastCoordsChecked.lat != 0) {
+                distance += distanceBetweenCoords(lastCoordsChecked.lat, lastCoordsChecked.lng, loc.lat, loc.lng);
+            }
+            lastTimeChecked = loc.date;
+            lastCoordsChecked = {
+                lat: loc.lat,
+                lng: loc.lng
+            }
+            console.log('TOTAL time in sec:', totalTimeInMS / 1000 / 60);
+            $('#totalt').text(Math.round(totalTimeInMS / 1000 / 60) + 'min');
+            console.log('TOTAL distance in meter:', distance);
+            $('#totald').text(Math.round(distance) + 'm');
+            console.log('TOTAL PAS:', distance * 1.426);
+            $('#totals').text(Math.round(distance * 1.426));
+            console.log('TOTAL SPEED:', distance  / (totalTimeInMS / 1000) * 3.6);
+            $('#totalv').text((distance / (totalTimeInMS / 1000) * 3.6).toFixed(2));
             const polyline = L.polyline(coords, { color: 'red' });
             if (map) {
                 polyline.addTo(map);
@@ -97,15 +142,22 @@
 
     // RUNS
     setTimeout(initMap, 1000 * 3); // Run after 3 sec
-    setTimeout(initFirebase(), 1000 * 5); // Run after 5 sec
-    setTimeout(startGeoloc(), 1000 * 15); // Run after 15 sec
-    setTimeout(displayCoord(), 1000 * 15); // Run after 15 sec
+    setTimeout(initFirebase, 1000 * 5); // Run after 5 sec
+    setTimeout(startGeoloc, 1000 * 10); // Run after 15 sec
+    setTimeout(displayCoord, 1000 * 10); // Run after 15 sec
 
 </script>
 
 LAT: <span id="latitude"></span><br />
 LNG: <span id="longitude"></span><br />
 ACC: <span id="accuracy"></span><br />
+DISTANCE: <span id="distance"></span><br />
+*** TOTAL<br />
+DIST: <span id="totald"></span><br />
+TIME: <span id="totalt"></span><br />
+STEP: <span id="totals"></span><br />
+SPEED: <span id="totalv"></span><br />
+***<br />
 <br />
 Last updated: <span id="updated"></span>
 <div style="height: 600px;" id="map"></div>

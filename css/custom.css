@@ -51,10 +51,10 @@ h2.sub-text {
     bottom: 37px;
     background: rgb(39, 64, 55);
     color: white;
-    font-size: 30px;
+    font-size: 18px;
     font-family: "Lato", Helvetica, sans-serif;
     padding: 8px 12px 12px 12px;
-    width: 226px;
+    width: 300px;
     text-align: center;
     margin: 10px auto;
     border-radius: 8px;
@@ -104,7 +104,7 @@ header
 }
 .timer-circle
 {
-    padding-top: 25px;
+    padding-top: 15px;
 }
 .timer-circle h1 {
     font-size: 50px;
@@ -948,4 +948,11 @@ label {
 .btn-custom-color:hover, .btn-custom-color:focus {
     background-color: rgb(24, 123, 184);
     color: white;
+}
+.follow-link {
+    width: 300px;
+}
+#title-map {
+    color: #3f43fd;
+    font-weight: 900;
 }
