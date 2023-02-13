@@ -51,13 +51,13 @@
             const distance = distanceBetweenCoords(lastCoords.latitude, lastCoords.longitude, crd.latitude, crd.longitude);
             $('#distance').text(distance);
             console.log('DIST:', distance);
-            if (!lastCoords || distance >= distThreshold) {
+            //if (!lastCoords || distance >= distThreshold) {
                 pushCoord(new Date().getTime(), crd.latitude, crd.longitude);
                 lastCoords = {
                     latitude: crd.latitude,
                     longitude: crd.longitude
                 }
-            }
+            //}
         }, function error(err) {
             console.warn(`ERROR(${err.code}): ${err.message}`);
         }, options);
