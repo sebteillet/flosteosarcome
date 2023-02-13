@@ -8,6 +8,7 @@
     const coords = [];
     const defaultCoord = [46.050007, -1.246484];
     const defaultZoom = 10;
+    const distThreshold = 1; // 30
     let dbRef = null;
     let lastCoords = {
         latitude: 0,
@@ -50,7 +51,7 @@
             const distance = distanceBetweenCoords(lastCoords.latitude, lastCoords.longitude, crd.latitude, crd.longitude);
             $('#distance').text(distance);
             console.log('DIST:', distance);
-            if (!lastCoords /* || distance >= 30*/) {
+            if (!lastCoords || distance >= distThreshold) {
                 pushCoord(new Date().getTime(), crd.latitude, crd.longitude);
                 lastCoords = {
                     latitude: crd.latitude,
