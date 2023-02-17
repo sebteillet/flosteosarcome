@@ -9,7 +9,6 @@
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/timer.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
-		<script src="https://kit.fontawesome.com/a0c3985323.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 		<link href='https://fonts.googleapis.com/css?family=Lobster&display=swap' rel='stylesheet' type='text/css'>
@@ -46,55 +45,60 @@
 			    		<div class= "main-text text-center">
 							<h2 class="top-text">Marche caritative en faveur de</h2>
 							<div class="main-associations">
-								<a href="https://www.ligue-cancer.net"><img class="small" src="img/assos/ligue.png" /></a>
+								<a href="https://www.ligue-cancer.net"><img class="medium" src="img/assos/ligue.png" /></a>
 								<a href="https://www.esean.fr"><img class="small" src="img/assos/esean.png" /></a>
 							</div>
 							<div class="desc">
 								<h3>Projet sportif caritatif dans une optique de récolter des dons, l'objectif est de réaliser le tour des 4 îles autour de la
 								Rochelle (l'île d'Oléron, l'île d'Aix , l'île Madame et l'île de Ré), soit environ 300 kms, en 14 jours</h3>
 							</div>
-							<h2 class="sub-text">Pacours effectué depuis le départ</h2>
+							<h2 class="sub-text">Statistiques depuis le départ</h2>
 			    		</div>
 			    		<div class="text-center">
 							<div class="numbers" id="count2"></div>
-						</div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                            <div class= "mini-square text-center">
+                                <strong id="amount">...</strong>&euro; récoltés
+                            </div>
+                        </div>
 						<div class= "col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center container-circles">
-							<div class= "circle text-center">
-								<div class= "row" id= "spacer1">
+							<div class= "mini-circle text-center">
+								<div class= "row" id= "mini-spacer1">
 									<div class= "title"></div>
 									<div class= "numbers" id= "totald">-</div>
 								</div>
-								<div class= "row" id= "spacer2">
+								<div class= "row" id= "mini-spacer2">
 									<div class= "title"></div>
 									<div class= "title" id= "kms">kms</div>
 								</div>
 							</div>
-							<div class= "circle text-center">
-								<div class= "row" id= "spacer1">
+							<div class= "mini-circle text-center">
+								<div class= "row" id= "mini-spacer1">
 									<div class= "title"></div>
 									<div class= "numbers" id= "totalt">-</div>
 								</div>
-								<div class= "row" id= "spacer2">
+								<div class= "row" id= "mini-spacer2">
 									<div class= "title"></div>
 									<div class= "title" id= "hours">min</div>
 								</div>
 							</div>
-							<div class= "circle text-center">
-								<div class= "row" id= "spacer1">
+							<div class= "mini-circle text-center">
+								<div class= "row" id= "mini-spacer1">
 									<div class= "title"></div>
 									<div class= "numbers" id= "totalv">-</div>
 								</div>
-								<div class= "row" id= "spacer2">
+								<div class= "row" id= "mini-spacer2">
 									<div class= "title"></div>
 									<div class= "title" id= "kmh">~ km/h</div>
 								</div>
 							</div>
-							<div class= "circle text-center">
-								<div class= "row" id= "spacer1">
+							<div class= "mini-circle text-center">
+								<div class= "row" id= "mini-spacer1">
 									<div class= "title"></div>
 									<div class= "numbers" id= "totals">-</div>
 								</div>
-								<div class= "row" id= "spacer2">
+								<div class= "row" id= "mini-spacer2">
 									<div class= "title"></div>
 									<div class= "title" id= "step">pas</div>
 								</div>
@@ -108,12 +112,13 @@
 		        <div id="bg3" class="item" style="background-image: url('img/img3.jpg');"></div>
 			</div>
 			<div id="partners">
-				<a target="_blank" href="https://www.decathlon.fr"><img class="medium" src="img/partners/white/decathlon.png" /></a>
+				<a target="_blank" href="https://www.decathlon.fr"><img class="medium" src="img/partners/white/decathlon2.png" /></a>
+				<a target="_blank" href="https://larochelleatlantique.rotary-1690.org/fr/"><img class="medium" src="img/partners/white/rotary2.png" /></a>
 				<a target="_blank" href="https://www.maisongillardeau.fr"><img class="medium" src="img/partners/white/gillardeau.png" /></a>
 				<a target="_blank" href="https://www.lheuredumarche.fr"><img class="big" src="img/partners/white/heuremarche.png" /></a>
 				<a target="_blank" href="https://www.bemyapp.com"><img class="big" src="img/partners/white/bma.png" /></a>
 				<a target="_blank" href="https://symaps-atlantique.com"><img class="small" src="img/partners/white/symaps.png" /></a>
-				<a target="_blank" href="https://larochelleatlantique.rotary-1690.org/fr/"><img class="medium" src="img/partners/white/rotary.png" /></a>
+				<a target="_blank" href="https://www.graphic.fr"><img class="medium" src="img/partners/white/graphic.png" /></a>
 				<a target="_blank" href="https://www.doctolib.fr/pedicure-podologue/la-roche-sur-yon/xavier-reverseau"><img class="medium" src="img/partners/white/podologue.png" /></a>
 			</div>
 		</div><!-- end of carousel -->
@@ -146,7 +151,6 @@
 						
 
 						<div style="height: 600px;" id="map">Chargement de la carte...</div>
-
 
 						<p>Je souhaite également <strong>dépolluer au maximum le bord des routes</strong> en ramassant le plus grand nombre de déchets possibles durant le projet.</p>
 						<p><strong>Les dons seront reversés en proportion de 50/50 entre chacune des 2 associations</strong> choisies via une cagnotte sur le site internet de l'association.</p>
@@ -196,8 +200,8 @@
 					</div>
 				</div>
 			</div>
-		</footer><!--end of footer -->
-		<script src='https://www.gstatic.com/firebasejs/4.8.1/firebase.js'></script>
+        </footer><!--end of footer -->
+        <script src='https://www.gstatic.com/firebasejs/4.8.1/firebase.js'></script>
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
 		<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 		<script>
@@ -236,7 +240,7 @@
 				return d;
 			}
 
-			// CONFIG FIREBASE
+			// CONFIG FBASE
 			var config = {
 				apiKey: "AIzaSyDXPIxRuudFKZymWOXdTVHSC8CFSacHhGU",
 				authDomain: "flosteosarcome2023.firebaseapp.com",
@@ -249,6 +253,11 @@
 			function initFirebase() {
 				firebase.initializeApp(config);
 				dbRef = firebase.database().ref();
+				const amountRef = dbRef.child('amount');
+				amountRef.on('value', (snapshot) => {
+					const amount = snapshot.val();
+					$('#amount').text(amount);
+				});
 			}
 
 			let totalTimeInMS = 0;
@@ -280,13 +289,13 @@
 						lat: loc.lat,
 						lng: loc.lng
 					}
-					console.log('TOTAL time in sec:', totalTimeInMS / 1000 / 60);
+					// console.log('TOTAL time in sec:', totalTimeInMS / 1000 / 60);
 					$('#totalt').text(Math.round(totalTimeInMS / 1000 / 60));
-					console.log('TOTAL distance in meter:', distance);
+					// console.log('TOTAL distance in meter:', distance);
 					$('#totald').text(Math.round(distance / 1000));
-					console.log('TOTAL PAS:', distance * 1.426);
+					// console.log('TOTAL PAS:', distance * 1.426);
 					$('#totals').text(Math.round(distance * 1.426));
-					console.log('TOTAL SPEED:', distance  / (totalTimeInMS / 1000) * 3.6);
+					// console.log('TOTAL SPEED:', distance  / (totalTimeInMS / 1000) * 3.6);
 					$('#totalv').text((distance / (totalTimeInMS / 1000) * 3.6).toFixed(2));
 
 					const polyline = L.polyline(coords, { color: 'red' });

@@ -85,6 +85,13 @@
     function initFirebase() {
         firebase.initializeApp(config);
         dbRef = firebase.database().ref();
+        $('#amount').click(function(event) {
+            console.log('TRIGGER!!!');
+            event.preventDefault();
+            const amountRef = dbRef.child('amount');
+            console.log($('#amount-collected').val());
+            amountRef.set($('#amount-collected').val());
+        });
     }
 
     // PUSH COORD TO FIREBASE
@@ -126,13 +133,13 @@
                 lat: loc.lat,
                 lng: loc.lng
             }
-            console.log('TOTAL time in sec:', totalTimeInMS / 1000 / 60);
+            // console.log('TOTAL time in sec:', totalTimeInMS / 1000 / 60);
             $('#totalt').text(Math.round(totalTimeInMS / 1000 / 60) + 'min');
-            console.log('TOTAL distance in meter:', distance);
+            // console.log('TOTAL distance in meter:', distance);
             $('#totald').text(Math.round(distance) + 'm');
-            console.log('TOTAL PAS:', distance * 1.426);
+            // console.log('TOTAL PAS:', distance * 1.426);
             $('#totals').text(Math.round(distance * 1.426));
-            console.log('TOTAL SPEED:', distance  / (totalTimeInMS / 1000) * 3.6);
+            // console.log('TOTAL SPEED:', distance  / (totalTimeInMS / 1000) * 3.6);
             $('#totalv').text((distance / (totalTimeInMS / 1000) * 3.6).toFixed(2));
             const polyline = L.polyline(coords, { color: 'red' });
             if (map) {
@@ -143,12 +150,15 @@
 
     // RUNS
     setTimeout(initMap, 1000 * 3); // Run after 3 sec
-    setTimeout(initFirebase, 1000 * 5); // Run after 5 sec
+    setTimeout(initFirebase, 1000 * 3); // Run after 5 sec
     setTimeout(startGeoloc, 1000 * 10); // Run after 15 sec
     setTimeout(displayCoord, 1000 * 10); // Run after 15 sec
 
 </script>
 
+<input id="amount-collected" step=".01" type="number" />
+<input id="amount" type="submit" />
+<br /><br />
 LAT: <span id="latitude"></span><br />
 LNG: <span id="longitude"></span><br />
 ACC: <span id="accuracy"></span><br />
