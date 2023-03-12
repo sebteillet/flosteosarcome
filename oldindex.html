@@ -15,7 +15,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Lato:400,600&display=swap' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/custom.css">
 	</head>
-	<body>
+	<body onload="countdown('2023','03','12','10','00')">
 		<!-- Carousel -->
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		    <!-- Indicators -->
@@ -52,55 +52,50 @@
 								<h3>Projet sportif caritatif dans une optique de récolter des dons, l'objectif est de réaliser le tour des 4 îles autour de la
 								Rochelle (l'île d'Oléron, l'île d'Aix , l'île Madame et l'île de Ré), soit environ 300 kms, en 14 jours</h3>
 							</div>
-							<h2 class="sub-text">Statistiques depuis le départ</h2>
+							<!-- <h2 class="sub-text">Mars 2023</h2> -->
 			    		</div>
 			    		<div class="text-center">
 							<div class="numbers" id="count2"></div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                            <div class= "mini-square text-center">
-                                <strong id="amount">...</strong>&euro; récoltés
-                            </div>
-                        </div>
+						</div>
 						<div class= "col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center container-circles">
-							<div class= "mini-circle text-center">
-								<div class= "row" id= "mini-spacer1">
+							<div class= "circle text-center">
+								<div class= "row" id= "spacer1">
 									<div class= "title"></div>
-									<div class= "numbers" id= "totald">-</div>
+									<div class= "numbers" id= "dday"></div>
 								</div>
-								<div class= "row" id= "mini-spacer2">
+								<div class= "row" id= "spacer2">
 									<div class= "title"></div>
-									<div class= "title" id= "kms">kms</div>
-								</div>
-							</div>
-							<div class= "mini-circle text-center">
-								<div class= "row" id= "mini-spacer1">
-									<div class= "title"></div>
-									<div class= "numbers" id= "totalt">-</div>
-								</div>
-								<div class= "row" id= "mini-spacer2">
-									<div class= "title"></div>
-									<div class= "title" id= "hours">min</div>
+									<div class= "title" id= "days">jours</div>
 								</div>
 							</div>
-							<div class= "mini-circle text-center">
-								<div class= "row" id= "mini-spacer1">
+							<div class= "circle text-center">
+								<div class= "row" id= "spacer1">
 									<div class= "title"></div>
-									<div class= "numbers" id= "totalv">-</div>
+									<div class= "numbers" id= "dhour"></div>
 								</div>
-								<div class= "row" id= "mini-spacer2">
+								<div class= "row" id= "spacer2">
 									<div class= "title"></div>
-									<div class= "title" id= "kmh">~ km/h</div>
+									<div class= "title" id= "hours">heures</div>
 								</div>
 							</div>
-							<div class= "mini-circle text-center">
-								<div class= "row" id= "mini-spacer1">
+							<div class= "circle text-center">
+								<div class= "row" id= "spacer1">
 									<div class= "title"></div>
-									<div class= "numbers" id= "totals">-</div>
+									<div class= "numbers" id= "dmin"></div>
 								</div>
-								<div class= "row" id= "mini-spacer2">
+								<div class= "row" id= "spacer2">
 									<div class= "title"></div>
-									<div class= "title" id= "step">pas</div>
+									<div class= "title" id= "minutes">min</div>
+								</div>
+							</div>
+							<div class= "circle text-center">
+								<div class= "row" id= "spacer1">
+									<div class= "title"></div>
+									<div class= "numbers" id= "dsec"></div>
+								</div>
+								<div class= "row" id= "spacer2">
+									<div class= "title"></div>
+									<div class= "title" id= "seconds">sec</div>
 								</div>
 							</div>
 						</div><!-- end of clock -->
@@ -148,11 +143,7 @@
 						<p>L'association souhaite réaliser <strong>une marche caritative</strong> en faveur de <strong>la Ligue contre le cancer de Charente-Maritime et de l'hôpital pour enfants ESEAN</strong> situé à Nantes.</p>
 						<p>L'objectif de cette marche est de <strong>réaliser le tour des 4 îles autour de la Rochelle, qui sont l'île d'Oléron, l'île d'Aix, l'île Madame et l'île de Ré</strong>. Je partirai du pont de l'île d'Oléron et après le tour de l'île, je remonterai vers le nord pour poursuivre avec les trois autres îles.</p>
 						<p><strong>Tout cela uniquement à pied et dans un délai maximum de 14 jours</strong>.<br />La distance à parcourir sera d'environ <strong>300 kilomètres</strong>, soit en moyenne entre 20 et 25 kms par jour.<br />Je réaliserai la majorité du projet seul, ou accompagné de mes parents ou des personnes qui souhaiteraient faire un peu de marche avec moi et qui seraient évidemment les bienvenues. </p>
-						<p id="title-map">Depuis le départ il y a <script>document.write(Math.round((new Date().getTime() -  new Date('2023-03-12T11:00:00Z').getTime()) / (1000*60*60*24)));</script> jours, voici le chemin parcouru:</p>
-						
-
-						<div style="height: 600px;" id="map">Chargement de la carte...</div>
-
+						<a href="https://www.komoot.fr/tour/1021269324" target="_blank"><img src="img/journey.png" alt="Parcours de la marche" /></a><br /><br />
 						<p>Je souhaite également <strong>dépolluer au maximum le bord des routes</strong> en ramassant le plus grand nombre de déchets possibles durant le projet.</p>
 						<p><strong>Les dons seront reversés en proportion de 50/50 entre chacune des 2 associations</strong> choisies via une cagnotte sur le site internet de l'association.</p>
 							<p>Si j'ai décidé de faire cette marche c'est avant tout pour moi et me démontrer que je suis capable de me surpasser. Mais aussi pour tous les gens de ma famille ou des amis que j'ai connus et qui nous ont malheureusement quittés à cause de cette maladie. Il faut garder espoir et essayer de tout faire pour vaincre cette maladie.</p>
@@ -201,115 +192,6 @@
 					</div>
 				</div>
 			</div>
-        </footer><!--end of footer -->
-        <script src='https://www.gstatic.com/firebasejs/4.8.1/firebase.js'></script>
-		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-		<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-		<script>
-			// GLOBALS
-			let map = null;
-			const coords = [];
-			const defaultCoord = [46.050007, -1.246484];
-			const defaultZoom = 10;
-			let dbRef = null;
-			let lastCoords = {
-				latitude: 0,
-				longitude: 0
-			};
-
-			// INIT MAT
-			function initMap() {
-				map = L.map('map').setView(defaultCoord, defaultZoom);
-				L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-					maxZoom: 19,
-					attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-				}).addTo(map);
-			}
-
-			// GEOLOC UTILITY
-			function distanceBetweenCoords(lat1, lon1, lat2, lon2) {
-				const R = 6371e3; // metres
-				const φ1 = lat1 * Math.PI/180; // φ, λ in radians
-				const φ2 = lat2 * Math.PI/180;
-				const Δφ = (lat2-lat1) * Math.PI/180;
-				const Δλ = (lon2-lon1) * Math.PI/180;
-				const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-						Math.cos(φ1) * Math.cos(φ2) *
-						Math.sin(Δλ/2) * Math.sin(Δλ/2);
-				const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-				const d = R * c; // in metres
-				return d;
-			}
-
-			// CONFIG FBASE
-			var config = {
-				apiKey: "AIzaSyDXPIxRuudFKZymWOXdTVHSC8CFSacHhGU",
-				authDomain: "flosteosarcome2023.firebaseapp.com",
-				databaseURL: "https://flosteosarcome2023-default-rtdb.firebaseio.com",
-				projectId: "flosteosarcome2023",
-				messagingSenderId: "firebase-adminsdk-kzina"
-			};
-
-			// INIT FIREBASE
-			function initFirebase() {
-				firebase.initializeApp(config);
-				dbRef = firebase.database().ref();
-				const amountRef = dbRef.child('amount');
-				amountRef.on('value', (snapshot) => {
-					const amount = snapshot.val();
-					$('#amount').text(amount);
-				});
-			}
-
-			let totalTimeInMS = 0;
-			let lastTimeChecked = 0;
-			let distance = 0;
-			let lastCoordsChecked = {
-				lat: 0,
-				lng: 0
-			}
-
-			// DISPLAY ON MAP
-			function displayData() {
-				const locRef = dbRef.child('locations');
-				locRef.on("child_added", snap => {
-					let loc = snap.val();
-					coords.push({
-						date: loc.date,
-						lat: loc.lat,
-						lng: loc.lng
-					});
-					if (lastTimeChecked != 0 && loc.date - lastTimeChecked <= 60 * 2 * 1000) {
-						totalTimeInMS += loc.date - lastTimeChecked;
-					}
-					if (lastCoordsChecked.lat != 0) {
-						distance += distanceBetweenCoords(lastCoordsChecked.lat, lastCoordsChecked.lng, loc.lat, loc.lng);
-					}
-					lastTimeChecked = loc.date;
-					lastCoordsChecked = {
-						lat: loc.lat,
-						lng: loc.lng
-					}
-					// console.log('TOTAL time in sec:', totalTimeInMS / 1000 / 60);
-					$('#totalt').text(Math.round(totalTimeInMS / 1000 / 60));
-					// console.log('TOTAL distance in meter:', distance);
-					$('#totald').text(Math.round(distance / 1000));
-					// console.log('TOTAL PAS:', distance * 1.426);
-					$('#totals').text(Math.round(distance * 1.426));
-					// console.log('TOTAL SPEED:', distance  / (totalTimeInMS / 1000) * 3.6);
-					$('#totalv').text((distance / (totalTimeInMS / 1000) * 3.6).toFixed(2));
-
-					const polyline = L.polyline(coords, { color: 'red' });
-					if (map) {
-						polyline.addTo(map);
-					}
-				});
-			}
-
-			// RUNS
-			setTimeout(initMap, 1000 * 3); // Run after 3 sec
-			setTimeout(initFirebase, 1000 * 5); // Run after 1 sec
-			setTimeout(displayData, 1000 * 15); // Run after 5 sec
-		</script>
+		</footer><!--end of footer -->
 	</body>
 </html>
