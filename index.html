@@ -213,6 +213,8 @@
         <script src='https://www.gstatic.com/firebasejs/4.8.1/firebase.js'></script>
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
 		<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+		<link rel="stylesheet" href="css/leaflet.extra-markers.min.css">
+		<script src="js/leaflet.extra-markers.min.js"></script>
 		<script>
 			// GLOBALS
 			let map = null;
@@ -323,6 +325,7 @@
 
 			// DISPLAY ON MAP
 			function displayData() {
+				initMap();
 				const locRef = dbRef.child('locations');
 				locRef.on("child_added", snap => {
 					let loc = snap.val();
@@ -344,22 +347,30 @@
 						lat: loc.lat,
 						lng: loc.lng
 					}
-					// console.log('TOTAL time in sec:', totalTimeInMS / 1000 / 60);
 					$('#totalt').text(Math.round(totalTimeInMS / 1000 / 60 / 60));
-					// console.log('TOTAL distance in meter:', distance);
 					$('#totald').text(Math.round(distance / 1000));
-					// console.log('TOTAL PAS:', distance * 1.426);
 					$('#totals').text(Math.round(distance * 1.426));
-					// console.log('TOTAL SPEED:', distance  / (totalTimeInMS / 1000) * 3.6);
 					$('#totalv').text((distance / (totalTimeInMS / 1000) * 3.6).toFixed(2));
 
 					const dayForTheCoord = new Date(loc.date).getDate();
 
 					if (isInitialDisplay) {
+						if (loc.date == '1679058039614' || loc.date == '1679061798002') {
+							const marker = L.ExtraMarkers.icon({
+								icon: 'fa-ship',
+								markerColor: 'blue',
+								iconColor: 'white',
+								shape: 'circle',
+								prefix: 'fa',
+								extraClasses: 'fa-2x',
+								svg: true
+							});
+							L.marker([loc.lat, loc.lng], {icon: marker}).addTo(map);
+						}
 						coordForDisplayPreviousDays[dayForTheCoord].push({
 							lat: loc.lat,
 							lng: loc.lng
-						})
+						});
 						previousDayPolylines[dayForTheCoord] = L.polyline(coordForDisplayPreviousDays[dayForTheCoord], { color: colors[dayForTheCoord], weight: 3 });
 					}
 
@@ -384,7 +395,17 @@
 				});
 				if (map) {
 					setTimeout(function() {
-						previousDayPolylines.forEach(polylineDay => {
+						previousDayPolylines.forEach((polylineDay, index) => {
+							const marker = L.ExtraMarkers.icon({
+								icon: 'fa-number',
+								number: `J${index - 11}`,
+								markerColor: colors[index],
+								shape: 'square',
+								prefix: 'fa',
+								extraClasses: 'fa-2x',
+								svg: true
+							});
+							L.marker([polylineDay._latlngs[0].lat, polylineDay._latlngs[0].lng], {icon: marker}).addTo(map);
 							polylineDay.addTo(map);
 							map.fitBounds(polylineDay.getBounds());
 						});
@@ -393,9 +414,8 @@
 			}
 
 			// RUNS
-			setTimeout(initMap, 1000 * 3); // Run after 3 sec
-			setTimeout(initFirebase, 1000 * 5); // Run after 1 sec
-			setTimeout(displayData, 1000 * 10); // Run after 5 sec
+			setTimeout(initFirebase, 1000 * 5); // Run after 5 sec
+			setTimeout(displayData, 1000 * 10); // Run after 10 sec
 			setTimeout(function() {
 				isInitialDisplay = false;
 			}, 1000 * 15);

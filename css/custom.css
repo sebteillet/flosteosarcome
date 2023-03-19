@@ -1049,3 +1049,7 @@ label {
     transform: translate(24px, 0);
     }
 }
+.fa-number {
+    font-family: 'Lato';
+    font-weight: bold;
+}
