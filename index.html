@@ -367,6 +367,18 @@
 							});
 							L.marker([loc.lat, loc.lng], {icon: marker}).addTo(map);
 						}
+						if (loc.date == '1679404978741' || loc.date == '1679404913684') {
+							const marker = L.ExtraMarkers.icon({
+								icon: 'fa-bicycle',
+								markerColor: 'red',
+								iconColor: 'white',
+								shape: 'circle',
+								prefix: 'fa',
+								extraClasses: 'fa-2x',
+								svg: true
+							});
+							L.marker([loc.lat, loc.lng], {icon: marker}).addTo(map);
+						}
 						coordForDisplayPreviousDays[dayForTheCoord].push({
 							lat: loc.lat,
 							lng: loc.lng
