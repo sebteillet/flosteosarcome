@@ -11,6 +11,7 @@
 		<script type="text/javascript" src="js/script.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<script src="https://kit.fontawesome.com/a0c3985323.js" crossorigin="anonymous"></script>
 		<link href='https://fonts.googleapis.com/css?family=Lobster&display=swap' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Lato:400,600&display=swap' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/custom.css">
@@ -49,10 +50,10 @@
 								<a href="https://www.esean.fr"><img class="small" src="img/assos/esean.png" /></a>
 							</div>
 							<div class="desc">
-								<h3>Projet sportif caritatif dans une optique de récolter des dons, l'objectif est de réaliser le tour des 4 îles autour de la
-								Rochelle (l'île d'Oléron, l'île d'Aix , l'île Madame et l'île de Ré), soit environ 300 kms, en 14 jours</h3>
+								<h3>En Mars 2023, l'association a organisé un projet sportif caritatif pour récolter des dons, l'objectif de réaliser le tour des 4 îles autour de la
+								Rochelle (l'île d'Oléron, l'île d'Aix , l'île Madame et l'île de Ré) a été atteint, + de 300 kms, en 14 jours</h3>
 							</div>
-							<h2 class="sub-text">Statistiques depuis le départ</h2>
+							<h2 class="sub-text">MERCI à tous!!</h2>
 			    		</div>
 			    		<div class="text-center">
 							<div class="numbers" id="count2"></div>
@@ -151,18 +152,29 @@
 	      	<div class="container project">
 				<div class="row text-center">
 					<div class= "col-lg-8 col-lg-offset-2 share-text">
-						<h3 class= "text-center">Le projet "Marche caritative Mars 2023"</h3>
-						<hr class= "full">
-						<p>L'association souhaite réaliser <strong>une marche caritative</strong> en faveur de <strong>la Ligue contre le cancer de Charente-Maritime et de l'hôpital pour enfants ESEAN</strong> situé à Nantes.</p>
-						<p>L'objectif de cette marche est de <strong>réaliser le tour des 4 îles autour de la Rochelle, qui sont l'île d'Oléron, l'île d'Aix, l'île Madame et l'île de Ré</strong>. Je partirai du pont de l'île d'Oléron et après le tour de l'île, je remonterai vers le nord pour poursuivre avec les trois autres îles.</p>
-						<p><strong>Tout cela uniquement à pied et dans un délai maximum de 14 jours</strong>.<br />La distance à parcourir sera d'environ <strong>300 kilomètres</strong>, soit en moyenne entre 20 et 25 kms par jour.<br />Je réaliserai la majorité du projet seul, ou accompagné de mes parents ou des personnes qui souhaiteraient faire un peu de marche avec moi et qui seraient évidemment les bienvenues. </p>
-						<p id="title-map">Depuis le départ il y a <script>document.write(Math.round((new Date().getTime() -  new Date('2023-03-12T11:00:00Z').getTime()) / (1000*60*60*24)));</script> jours, voici le chemin parcouru:</p>
+						<h3 class="text-center">Le projet "Marche caritative Mars 2023"</h3>
+						<hr class="full">
+						<p>En Mars 2023, l'association a réalisé <strong>une marche caritative</strong> en faveur de <strong>la Ligue contre le cancer de Charente-Maritime et de l'hôpital pour enfants ESEAN</strong> situé à Nantes.</p>
+						<p>L'objectif de cette marche était de <strong>réaliser le tour des 4 îles autour de la Rochelle, qui sont l'île d'Oléron, l'île d'Aix, l'île Madame et l'île de Ré</strong>. Au départ du pont de l'île d'Oléron et après le tour de l'île, puis la poursuivre par le Nord des trois autres îles, le projet sportif a pu être réalisé avec succès.</p>
+						<p><strong>Tout cela uniquement à pied et en 14 jours</strong>.<br />La distance parcouru était de plus de <strong>300 kilomètres</strong>, soit en moyenne 25 kms par jour.<br /><br /></p>
+						<div id="thank-you" class="alert alert-info" role="alert">
+							<strong>L'association souhaite tous vous remercier, si vous avez soutenu le projet avec un don, si vous êtes venus marcher quelques kms sur le parcours, si vous avez partagé notre projet sur les réseaux, ou tout simplement cru en ce projet, ainsi qu'à tous nos partenaires sur cet événement.<br /> MERCI !</strong>
+						</div>
+						<h4 style="font-size: 24px;" class="text-left"><i class="fas fa-person-hiking fa-2x"></i>&nbsp;Quelques statistiques sur la marche carritative</h4>
+						<p class="text-left">
+							La distance totale parcourues est de <strong><span id="finalKms">...</span></strong><br />
+							Le temps de marche effectif est de <strong><span id="finalTime">...</span></strong> sur réparties sur 14 jours (dont 1j de repos)<br />
+							Le nombre de pas pour réaliser le parcours était d'environ <strong><span id="finalStep">...</span></strong>.<br />
+							La vitesse moyenne durant la trajet était de: <strong><span id="finalSpeed">...</span> km/h</strong><br />
+						</p>
+						<div id="daylyRecap"></div>
+						<p id="title-map">Voici le parcours final de la marche :</p>
 						
 
 						<div style="height: 600px;" id="map">Chargement de la carte...</div>
 
-						<p>Je souhaite également <strong>dépolluer au maximum le bord des routes</strong> en ramassant le plus grand nombre de déchets possibles durant le projet.</p>
-						<p><strong>Les dons seront reversés en proportion de 50/50 entre chacune des 2 associations</strong> choisies via une cagnotte sur le site internet de l'association.</p>
+						<p>Nous avons également <strong>dépolluer au maximum le bord des routes</strong> en ramassant le plus grand nombre de déchets possibles durant le trajet.</p>
+						<p><strong>Les dons récoltés seront reversés dans quelques jours en proportion de 50/50 entre chacune des 2 associations</strong> choisies via une cagnotte sur le site internet de l'association.</p>
 							<p>Si j'ai décidé de faire cette marche c'est avant tout pour moi et me démontrer que je suis capable de me surpasser. Mais aussi pour tous les gens de ma famille ou des amis que j'ai connus et qui nous ont malheureusement quittés à cause de cette maladie. Il faut garder espoir et essayer de tout faire pour vaincre cette maladie.</p>
 						<div class="section-end">
 							<a class="button-more" href="project.html">En savoir plus sur le projet</a>
@@ -304,6 +316,40 @@
 				25: [],
 				26: [],
 			};
+			const distanceEachDay = {
+				12: 0,
+				13: 0,
+				14: 0,
+				15: 0,
+				16: 0,
+				17: 0,
+				18: 0,
+				19: 0,
+				20: 0,
+				21: 0,
+				22: 0,
+				23: 0,
+				24: 0,
+				25: 0,
+				26: 0,
+			};
+			const timeEachDay = {
+				12: 0,
+				13: 0,
+				14: 0,
+				15: 0,
+				16: 0,
+				17: 0,
+				18: 0,
+				19: 0,
+				20: 0,
+				21: 0,
+				22: 0,
+				23: 0,
+				24: 0,
+				25: 0,
+				26: 0,
+			};
 			const colors = {
 				12: '#E3413F',
 				13: '#3f43fd',
@@ -318,8 +364,8 @@
 				22: '#3f43fd',
 				23: '#E3413F',
 				24: 'green',
-				25: '#3f43fd',
-				26: '#E3413F',
+				25: '#E3413F',
+				26: '#3f43fd',
 			}
 
 
@@ -329,6 +375,7 @@
 				const locRef = dbRef.child('locations');
 				locRef.on("child_added", snap => {
 					let loc = snap.val();
+					const dayForTheCoord = new Date(loc.date).getDate();
 					coords.push({
 						date: loc.date,
 						lat: loc.lat,
@@ -336,9 +383,11 @@
 					});
 					if (lastTimeChecked != 0 && loc.date - lastTimeChecked <= 60 * 2 * 1000) {
 						totalTimeInMS += loc.date - lastTimeChecked;
+						timeEachDay[dayForTheCoord] += loc.date - lastTimeChecked;
 					}
-					if (lastCoordsChecked.lat != 0) {
+					if (lastCoordsChecked.lat != 0 && distanceBetweenCoords(lastCoordsChecked.lat, lastCoordsChecked.lng, loc.lat, loc.lng) < 1000) {
 						distance += distanceBetweenCoords(lastCoordsChecked.lat, lastCoordsChecked.lng, loc.lat, loc.lng);
+						distanceEachDay[dayForTheCoord] += distanceBetweenCoords(lastCoordsChecked.lat, lastCoordsChecked.lng, loc.lat, loc.lng);
 					}
 					lastTimeChecked = loc.date;
 					beforeLastCoordsChecked.lat = lastCoordsChecked.lat;
@@ -352,7 +401,10 @@
 					$('#totals').text(Math.round(distance * 1.426));
 					$('#totalv').text((distance / (totalTimeInMS / 1000) * 3.6).toFixed(2));
 
-					const dayForTheCoord = new Date(loc.date).getDate();
+					$('#finalTime').text(`${Math.round(totalTimeInMS / 1000 / 60 / 60)} heures et ${Math.round(totalTimeInMS / 1000 / 60 % 60)} mins`);
+					$('#finalKms').text(`${Math.round(distance / 1000)} kms et ${Math.round(distance % 1000)} mètres`);
+					$('#finalStep').text(Math.round(distance * 1.426));
+					$('#finalSpeed').text((distance / (totalTimeInMS / 1000) * 3.6).toFixed(2));
 
 					if (isInitialDisplay) {
 						if (loc.date == '1679058039614' || loc.date == '1679061798002') {
@@ -419,18 +471,39 @@
 							});
 							L.marker([polylineDay._latlngs[0].lat, polylineDay._latlngs[0].lng], {icon: marker}).addTo(map);
 							polylineDay.addTo(map);
-							map.fitBounds(polylineDay.getBounds());
+							// map.fitBounds(polylineDay.getBounds());
 						});
-					}, 1000 * 1);
+						console.log('TIME:', timeEachDay);
+						console.log('DIST:', distanceEachDay);
+						statsByDay(timeEachDay, distanceEachDay);
+					}, 2000 * 1);
 				}
 			}
 
+			function statsByDay(time, dist) {
+				let strDay = '';
+				for (let i = 12; i < 27; i++) {
+					if (i == 20) {
+						strDay += `<strong>JOUR ${i-11}</strong><br /> Repos :)<br /><br />`;
+					} else {
+						const durationInMins = Math.round(time[i] / 1000 / 60);
+						strDay += `<strong>JOUR ${i-11}</strong><br />`;
+						strDay += `Distance: ${Math.round(dist[i] / 1000)} kms et ${Math.round(dist[i] % 1000)} mètres<br />`
+						strDay += `Durée: ${Math.floor(durationInMins / 60)} heures et ${durationInMins % 60} min<br />`
+						strDay += `Vitesse moyenne: ${(dist[i] / (time[i] / 1000) * 3.6).toFixed(2)} km/h<br />`
+						strDay += `Pas: ${Math.round(dist[i] * 1.426)}<br />`
+						strDay += `<br /><br />`;
+					}
+				}
+				$('#daylyRecap').html(strDay);
+			}
+
 			// RUNS
-			setTimeout(initFirebase, 1000 * 5); // Run after 5 sec
-			setTimeout(displayData, 1000 * 10); // Run after 10 sec
+			setTimeout(initFirebase, 1000 * 7); // Run after 5 sec
+			setTimeout(displayData, 1000 * 15); // Run after 10 sec
 			setTimeout(function() {
 				isInitialDisplay = false;
-			}, 1000 * 15);
+			}, 1000 * 20);
 		</script>
 	</body>
 </html>
